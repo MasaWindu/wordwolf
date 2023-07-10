@@ -21685,7 +21685,7 @@ var source = {
   PShapeSVG:  require("./Objects/PShapeSVG"),
   CommonFunctions: require("./P5Functions/commonFunctions"),
   defaultScope: require("./Helpers/defaultScope"),
-  Processing: require("../Processing"),
+  Processing: require("./Processing"),
   setupParser: require("./Parser/Parser"),
   finalize: require("./Helpers/finalizeProcessing")
 };
