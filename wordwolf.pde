@@ -3,6 +3,18 @@ boolean pageselect;
 float select,thema2,thema3;
 Table tbl;
 
+void setup() {
+  size(350, 600);
+  frameRate(60);
+  textSize(70);
+  pagenumber = 1;
+  buttontype.start = new button(100, 400, width/2, 80);
+  buttontype.people_low = new button(20, 200, 60, 80);
+  buttontype.people_high = new button(250, 200, 60, 80);
+  tbl = loadTable("theme.csv");
+  textAlign(CENTER);
+  
+}
 public String themaselect(int x){
   int nextthema;
   if (x == themaselecter){
@@ -51,18 +63,7 @@ public void playerchange(int s){
   
 }
 
-void setup() {
-  size(350, 600);
-  frameRate(60);
-  textSize(70);
-  pagenumber = 1;
-  buttontype.start = new button(100, 400, width/2, 80);
-  buttontype.people_low = new button(20, 200, 60, 80);
-  buttontype.people_high = new button(250, 200, 60, 80);
-  tbl = loadTable("theme.csv");
-  textAlign(CENTER);
-  
-}
+
 
 void draw(){
   if(pagenumber ==1){
