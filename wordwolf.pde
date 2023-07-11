@@ -3,53 +3,6 @@ boolean pageselect;
 float select,thema2,thema3;
 Table tbl;
 
-public String themaselect(int x){
-  int nextthema;
-  if (x == themaselecter){
-    String  getStr =  tbl. getString(int(thema2),int(thema3)) ;
-    return getStr;
-  }else{
-    if(int(thema3)==1){
-      nextthema = 0;
-    }else{
-      nextthema = 1;
-    }
-   String  getStr =  tbl. getString(int(thema2),nextthema) ;
-   return getStr; 
-  }
-}
-
-public void numberofplayer(int n){
-  fill(0);
-  textSize(70);
-  text( n ,width/2,250);
-}
-
-public int player(int n){
-  n = n-1;
-  return n;
-}
-
-public void playerchange(int s){
-  
-  if(s%2==0){
-    mm =(s/2)-1;
-    textSize(50);
-    fill(0);
-    text("Player"+(n-mm),width/2,150);
-    text("Are you ready?",width/2,250);
-  }else {
-    String thema;
-    thema = themaselect(n-mm);
-    textSize(50);
-    fill(0);
-    text("Your Theme is",width/2,200);
-    textSize(50);
-    
-    text("\""+thema+"\"",width/2,300);
-  }
-  
-}
 
 void setup() {
   size(350, 600);
@@ -60,7 +13,7 @@ void setup() {
   buttontype.people_low = new button(20, 200, 60, 80);
   buttontype.people_high = new button(250, 200, 60, 80);
   tbl = loadTable("theme.csv");
-  textAlign(CENTER);
+//  textAlign(CENTER);
   
 }
 
@@ -249,131 +202,4 @@ void mousePressed() {
 
 void mouseReleased() {
   Mouse.clickTime = 0;
-}
-
-public class button{
-  int x,y;
-  int sizeX,sizeY,size;
-  String text = "";
-  
-  private boolean isSelected,select;
-  
-  button(int _x, int _y, int _sizeX, int _sizeY){
-    x = _x;
-    y = _y;
-    sizeX = _sizeX;
-    sizeY = _sizeY;
-  }
-  
-  public void Text(String _text,int _size){
-    text = _text;
-    size = _size;
-  }
-  
-  public boolean GetClicked(){
-    return isSelected;
-  }
-  
-  public void Update(){
-    
-    isSelected = false;
-    
-    if (mouseX > x && mouseX < x + sizeX && mouseY > y && mouseY < y + sizeY) {
-      
-      if (Mouse.clickTime == 1){
-        isSelected = true;
-      }
-    }
-  }
-  
-  public void Draw(){
-    if (isSelected){
-      fill(35,43,61);
-    }else{
-      fill(255,144,0);
-    }  
-    noStroke();
-    rect(x, y, sizeX, sizeY);
-     fill(255);
-     textSize(size);
-    text(text,x+(sizeX/2),y+60);
-  }
-}
-
-static class Mouse{
-  static int clickTime;
-  static boolean firstClick;
-  
-  static void Pressing(){
-    clickTime++;
-    
-    if (clickTime == 0){
-      firstClick = true;
-    }else{
-      firstClick = false;
-    }
-  }
-}
-static class page {
-  static void page1(){
-    buttontype.start.Text("start",70);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-  }
-  static void page2(){
-    buttontype.start.Text("start",70);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-    buttontype.people_low.Text("↓",60);
-    buttontype.people_low.Update();
-    buttontype.people_low.Draw();
-    buttontype.people_high.Text("↑",60);
-    buttontype.people_high.Update();
-    buttontype.people_high.Draw();
-  }
-  static void page3(){
-    buttontype.start.Text("yes",90);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-  }
-  static void page4(){
-    buttontype.start.Text("start",70);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-    buttontype.people_low.Text("↓",60);
-    buttontype.people_low.Update();
-    buttontype.people_low.Draw();
-    buttontype.people_high.Text("↑",60);
-    buttontype.people_high.Update();
-    buttontype.people_high.Draw();
-  }
-  static void page5(){
-    buttontype.start.Text("end",70);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-  }
-  static void page6(){
-    buttontype.start.Text("start",70);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-    buttontype.people_low.Text("↓",60);
-    buttontype.people_low.Update();
-    buttontype.people_low.Draw();
-    buttontype.people_high.Text("↑",60);
-    buttontype.people_high.Update();
-    buttontype.people_high.Draw();
-  }
-  static void page7(){
-    buttontype.start.Text("next",70);
-    buttontype.start.Update();
-    buttontype.start.Draw();
-  }
-}
-
-static class buttontype{
-  static button start;
-  static button next_start;
-  static button people_low;
-  static button people_high;
-  
 }
