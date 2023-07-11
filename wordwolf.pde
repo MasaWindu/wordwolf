@@ -5,7 +5,7 @@ Table tbl;
 
 
 void setup() {
-  size(350, 600);
+  size(700, 600);
   frameRate(60);
   textSize(70);
   pagenumber = 1;
