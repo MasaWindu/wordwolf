@@ -13,7 +13,7 @@ void setup() {
   buttontype.people_low = new button(20, 200, 60, 80);
   buttontype.people_high = new button(250, 200, 60, 80);
   tbl = loadTable("theme.csv");
-//  textAlign(CENTER);
+　textAlign(CENTER);
   
 }
 
