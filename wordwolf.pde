@@ -9,7 +9,7 @@ void setup() {
   frameRate(60);
   textSize(70);
   pagenumber = 1;
-  buttontype.start = new button(100, 400, width/2, 80);
+  buttontype.start = new button(100, 400, 175, 80);
   buttontype.people_low = new button(20, 200, 60, 80);
   buttontype.people_high = new button(250, 200, 60, 80);
   tbl = loadTable("theme.csv");
@@ -22,7 +22,7 @@ void draw(){
     background(#f0e68c);
     textSize(50);
     fill(0);
-    text("WORD WOLF",width/2,250);
+    text("WORD WOLF",175,250);
     page.page1();
     if(buttontype.start.GetClicked()==true){
       pageselect = true;
@@ -37,7 +37,7 @@ void draw(){
     page.page2();
     textSize(50);
     fill(0);
-    text("Select Playler",width/2,100);
+    text("Select Playler",175,100);
     numberofplayer(n);
     if(buttontype.people_high.GetClicked()==true){
       buttontype.people_high.select = true;
@@ -92,8 +92,8 @@ void draw(){
     page.page4();
     textSize(50);
     fill(0);
-    text("PLAY TIME",width/2,100);
-    text("minutes",width/2,350);
+    text("PLAY TIME",175,100);
+    text("minutes",175,350);
     numberofplayer(nn);
     if(buttontype.people_high.GetClicked()==true){
       buttontype.people_high.select = true;
@@ -144,7 +144,7 @@ void draw(){
     page.page6();
     textSize(50);
     fill(0);
-    text("Select Playler",width/2,100);
+    text("Select Playler",175,100);
     numberofplayer(f);
     if(buttontype.people_high.GetClicked()==true){
       buttontype.people_high.select = true;
@@ -177,11 +177,11 @@ void draw(){
     if(f==int(select)){
       fill(0);
       textSize(50);
-      text( "CITIZEN WON !!!" ,width/2,250);
+      text( "CITIZEN WON !!!" ,175,250);
     }else{
       fill(0);
       textSize(50);
-      text( "WOLF WON !!!" ,width/2,250);
+      text( "WOLF WON !!!" ,175,250);
     }
     if(buttontype.start.GetClicked()==true){
       pageselect = true;
